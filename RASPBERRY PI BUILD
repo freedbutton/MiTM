@@ -1,16 +1,17 @@
-#HARDWARE USED
-#Raspberry Pi 4 with 4GiGs of ram
-#Cheap key board and mouse
-#Moniter
-#32 GiG micro SD card 
+HARDWARE USED
+Raspberry Pi 4 with 4GiGs of ram
+Cheap key board and mouse
+Moniter
+32 GiG micro SD card 
 
 
 
 
-#SET UP GUIDE 
-#1. install the raspberry pi imager from https://www.raspberrypi.com/software/
-#2. download a intance of kali linux for the raspberry pi from https://www.kali.org/get-kali/#kali-arm (I used the 32 bit version however the 64 bit would also work)
-#3. use the raspberry pi imager to load the kali download onto your micro sd card. 
-#4. put micro sd card into raspberry Pi and start its fist bootup. 
+SET UP GUIDE 
+1. install the raspberry pi imager from https://www.raspberrypi.com/software/
+2. download a intance of kali linux for the raspberry pi from https://www.kali.org/get-kali/#kali-arm (I used the 32 bit version however the 64 bit would also work)
+3. use the raspberry pi imager to load the kali download onto your micro sd card. 
+4. put micro sd card into raspberry Pi and start its fist bootup. 
 
-# It really is just that easy. 
+
+It really is just that easy. 
