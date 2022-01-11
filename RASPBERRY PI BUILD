@@ -12,6 +12,6 @@ SET UP GUIDE
 2. download a intance of kali linux for the raspberry pi from https://www.kali.org/get-kali/#kali-arm (I used the 32 bit version however the 64 bit would also work)
 3. use the raspberry pi imager to load the kali download onto your micro sd card. 
 4. put micro sd card into raspberry Pi and start its fist bootup. 
+5. connect the raspberry pi to the wifi network(This must be the wifi network the victum is connected to. It is also worth noting that this attack can only be carried out if the victum is 
+is connected to wifi.)
 
-
-It really is just that easy. 
