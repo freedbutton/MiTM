@@ -1,1 +1,45 @@
+SUMMARY OF PROJECT MALCOM
+
+To create the Man in the Middle Attack, group members used a blend of attack types and techniques to accomplish the attack. The Attacker used the Tool Ettercap to deploy an ARP spoof. By doing this, the attacker told the victim they were the gateway and the gateway that they were the victim. That allowed the communication to traverse through the attacker's machine and allowed it to capture the victims credentials. Next, the attacker used Ettercap to deploy a DNS poisoning technique. This was accomplished by assigning the attacker's IP address to the URL which allowed the DNS to resolve to the attacker's IP address. Lastly, They used the Social Engineering Tool Kit (SET) to spoof a Bank Site. Since the victim falsely perceives the site to be legitimate, they enter their credentials on the spoofed login page. At this point, the attacker apprehends the victims credentials. As a result, they now have access to the users information on the legitimate website.
+
+To eradicate the attack, The victim will navigate to their chrome settings and they will check their Security and Privacy Settings to find that they are using HTTP instead of the encrypted HTTPS.
+They will then have to turn on the Advanced setting of “always use Secure Connection”. By doing this, they be able to use the HTTPS protocol to ensure that their traffic is encrypted. Next, they will need to turn on “use secure DNS”. By doing this, they will ensure that the DNS requests will be encrypted and will not be able to be read in plain text if their traffic is intercepted by an attacker 
+
+
+Presentation Steps
+This project will simulate a man in the middle attack. As the name suggests, the man in the middle attack allows the attacker to position themselves between a victim’s communication with an application or gateway. In this scenario, the attacker machine will steal the victim’s credentials by impersonation. They will accomplish this  by telling the victim’s machine that they are the gateway and then telling the gateway that they are the victim. The next steps will show how this is accomplished 
+For the initial setup, the attacker machine is the Kali linux VM on the left and the victim machine is the Windows machine on the right
+Note the IP address of the attacker machine, victim Machine, and Gateway IP
+Attacker IP= 10.0.0.15
+Victim IP = 10.0.0.186
+Gateway= 10.0.0.1
+On the attacker, enable port forwarding 
+sudo systctl -w net.ipv4.ip_forward=1
+Navigate to the ettercap dns file
+sudo vim /etc/ettercap/etter.dns
+When the DNS server tries to resolve the DNS request, it will point the obank simulator URL to the attacker IP address.
+Use vim to edit the text file
+
+Open the graphical interface of ettercap with the command
+Sudo ettercap -G
+In ettercap, scan for hosts using the magnifying glass icon
+Add the gateway IP to Target 1
+Add the Victim IP to Target 2
+Click the world icon in ettercap and select ARP poisoning 
+Once that is running, select the 3 dots in the upper right and select plugins then manage plugins. DO NOT click Load plugin otherwise the process will fail
+Double click DNS_spoof. At this point the DNS spoof will execute
+Navigate out of ettercap and open Social Engineering Toolkit (SET) in the terminal using the command
+sudo setoolkit 
+Once SET is running press the number 1 for Social engineering Attacks, 2 for Website Attack Vectors, 3 for credential harvester, and then  2 for site cloner
+Then enter the URL of the website you want to clone. In this case, we will use http://obanksimulator.ngf.org/
+On the victim machine, navigate to http://obanksimulator.ngf.org/ in the browser
+It's also worth noting that this attack can happen on any OS since it is through the browser 
+Enter the credentials on the victim machine and you will find that the attacker machine will be able to capture the credentials entered on the victim 
+
+The next steps will be to eradicate the Man in the middle attack we just executed
+The victim will navigate to their chrome settings and they will check their Security and Privacy Settings to find that they are using HTTP instead of the encrypted HTTPS.
+They will then have to turn on the Advanced setting of “always use Secure Connection” by doing this, they be able to use the HTTPS protocol to ensure that their traffic is encrypted
+Next they will need to turn on “use secure DNS”. By doing this, they will ensure that the DNS requests will be encrypted and will not be able to be read in plain text if their traffic is intercepted by an attacker 
+This concludes the Man in the Middle attack and eradication process. Hopefully this demonstration shows how users can defend against a man in the middle attack in the cyber world
+
 
